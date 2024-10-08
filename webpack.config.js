@@ -22,7 +22,10 @@ module.exports = {
     },
     mode: 'development',
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist'),
-        port: 9000 // Specify the port here
+        static: {
+            directory: path.resolve(__dirname, 'dist')
+        },
+        port: 3000, // Specify the port here
+        open: true
     }
 };

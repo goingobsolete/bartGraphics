@@ -1,11 +1,11 @@
 import p5 from 'p5';
-import {fonts, images, jsons} from 'bc-shared-data-module';
+import { fonts, images, jsons } from 'bc-shared-data-module';
 
 const sketch = (sk) => {
-    let bgImage
+    let bgImage;
 
     sk.preload = () => {
-        sk.loadImage(images.bg);
+        bgImage = sk.loadImage(images.bg);
 
         sk.loadFont(fonts.sign);
         sk.loadFont(fonts.text.regular);
@@ -16,7 +16,7 @@ const sketch = (sk) => {
     };
 
     sk.setup = () => {
-        sk.createCanvas(bgImage.width, bgImage.height, P2D);
+        sk.createCanvas(bgImage.width, bgImage.height, sk.P2D);
         sk.background(bgImage);
     };
 
@@ -25,4 +25,6 @@ const sketch = (sk) => {
         sk.textSize(32);
         sk.text('I would prefer not to.', 10, 30);
     };
-}
+};
+
+new p5(sketch);
