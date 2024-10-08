@@ -20,5 +20,9 @@ module.exports = {
             }
         ]
     },
-    mode: 'development'
+    mode: 'development',
+    devServer: {
+        contentBase: path.resolve(__dirname, 'dist'),
+        port: 9000 // Specify the port here
+    }
 };
